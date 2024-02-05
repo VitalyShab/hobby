@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<div class="greet hobby" data-bind="scope: 'customer'">
+    <!-- ko if: customer().hobby  -->
+    <span class="logged-in"
+          data-bind="text: new String('<?= $escaper->escapeHtml(__('Hobby, %1!', '%1')) ?>').
+              replace('%1', customer().hobby)">
+        </span>
+    <!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }
+</script>

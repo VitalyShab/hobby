@@ -1,0 +1,7 @@
+input CustomerUpdateInput {
+    hobby: Int @doc(description: "The customer's hobby.")
+}
+
+type Customer {
+    hobby: Int @doc(description: "The customer's hobby.")
+}
